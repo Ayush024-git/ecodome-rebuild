@@ -590,6 +590,158 @@ except Exception as e:
     log_test("POST /api/community/join tests", False, f"Error: {str(e)}")
 
 # ============================================================================
+# TEST 17: POST /api/projects/notify - Future Projects notification signup
+# ============================================================================
+print("\n[TEST 17] POST /api/projects/notify - Future Projects notification")
+try:
+    # Test case 1: Valid submission
+    notify_data_1 = {
+        "email": "fan1@example.com",
+        "projectId": "mangrove-restoration-missions",
+        "projectTitle": "Mangrove Restoration Missions"
+    }
+    response = requests.post(f"{API_URL}/projects/notify", json=notify_data_1, timeout=10)
+    if response.status_code == 200:
+        data = response.json()
+        if data.get('ok') == True:
+            log_test("POST /api/projects/notify creates notification", True)
+        else:
+            log_test("POST /api/projects/notify creates notification", False, f"Response: {data}")
+    else:
+        log_test("POST /api/projects/notify creates notification", False, f"Status: {response.status_code}")
+    
+    # Test case 2: Submit SAME email + projectId again (should upsert, no duplicate)
+    response2 = requests.post(f"{API_URL}/projects/notify", json=notify_data_1, timeout=10)
+    if response2.status_code == 200:
+        log_test("POST /api/projects/notify upsert (same email+projectId)", True)
+    else:
+        log_test("POST /api/projects/notify upsert", False, f"Status: {response2.status_code}")
+    
+    # Test case 3: Submit SAME email but DIFFERENT projectId (should create separate row)
+    notify_data_2 = {
+        "email": "fan1@example.com",
+        "projectId": "youth-research-fellowship",
+        "projectTitle": "Youth Research Fellowship"
+    }
+    response3 = requests.post(f"{API_URL}/projects/notify", json=notify_data_2, timeout=10)
+    if response3.status_code == 200:
+        log_test("POST /api/projects/notify different projectId (separate row)", True)
+    else:
+        log_test("POST /api/projects/notify different projectId", False, f"Status: {response3.status_code}")
+    
+    # Test case 4: Missing email (should return 400)
+    response4 = requests.post(f"{API_URL}/projects/notify", json={"projectId": "test-project"}, timeout=10)
+    if response4.status_code == 400:
+        data4 = response4.json()
+        if 'error' in data4:
+            log_test("POST /api/projects/notify missing email returns 400", True, f"Error: {data4['error']}")
+        else:
+            log_test("POST /api/projects/notify missing email returns 400", False, "Missing error field")
+    else:
+        log_test("POST /api/projects/notify missing email returns 400", False, f"Status: {response4.status_code}")
+    
+    # Test case 5: Missing projectId (should return 400)
+    response5 = requests.post(f"{API_URL}/projects/notify", json={"email": "test@example.com"}, timeout=10)
+    if response5.status_code == 400:
+        data5 = response5.json()
+        if 'error' in data5:
+            log_test("POST /api/projects/notify missing projectId returns 400", True, f"Error: {data5['error']}")
+        else:
+            log_test("POST /api/projects/notify missing projectId returns 400", False, "Missing error field")
+    else:
+        log_test("POST /api/projects/notify missing projectId returns 400", False, f"Status: {response5.status_code}")
+        
+except Exception as e:
+    log_test("POST /api/projects/notify tests", False, f"Error: {str(e)}")
+
+# ============================================================================
+# TEST 18: GET /api/projects/notify - Get notification counts
+# ============================================================================
+print("\n[TEST 18] GET /api/projects/notify - Get notification counts")
+try:
+    response = requests.get(f"{API_URL}/projects/notify", timeout=10)
+    if response.status_code == 200:
+        data = response.json()
+        
+        # Check structure
+        if 'counts' in data and 'total' in data:
+            log_test("GET /api/projects/notify returns counts and total", True)
+        else:
+            log_test("GET /api/projects/notify returns counts and total", False, f"Missing keys in response: {data.keys()}")
+        
+        # Verify counts after tests 1-3
+        counts = data.get('counts', {})
+        total = data.get('total', 0)
+        
+        # After test 17: fan1@example.com signed up for 2 projects
+        # mangrove-restoration-missions: 1 (submitted twice but upserted)
+        # youth-research-fellowship: 1
+        # Total should be at least 2
+        mangrove_count = counts.get('mangrove-restoration-missions', 0)
+        fellowship_count = counts.get('youth-research-fellowship', 0)
+        
+        if mangrove_count >= 1:
+            log_test("GET /api/projects/notify mangrove-restoration-missions count >= 1", True, f"Count: {mangrove_count}")
+        else:
+            log_test("GET /api/projects/notify mangrove-restoration-missions count >= 1", False, f"Count: {mangrove_count}")
+        
+        if fellowship_count >= 1:
+            log_test("GET /api/projects/notify youth-research-fellowship count >= 1", True, f"Count: {fellowship_count}")
+        else:
+            log_test("GET /api/projects/notify youth-research-fellowship count >= 1", False, f"Count: {fellowship_count}")
+        
+        if total >= 2:
+            log_test("GET /api/projects/notify total >= 2", True, f"Total: {total}")
+        else:
+            log_test("GET /api/projects/notify total >= 2", False, f"Total: {total}")
+        
+        # Verify no duplicate for same email+projectId (upsert test)
+        # We submitted mangrove-restoration-missions twice with same email, should only count once
+        if mangrove_count == 1:
+            log_test("GET /api/projects/notify upsert verification (no duplicate)", True, f"mangrove count is exactly 1")
+        else:
+            log_test("GET /api/projects/notify upsert verification", False, f"Expected 1, got {mangrove_count} (possible duplicate)")
+            
+    else:
+        log_test("GET /api/projects/notify", False, f"Status: {response.status_code}")
+        
+except Exception as e:
+    log_test("GET /api/projects/notify tests", False, f"Error: {str(e)}")
+
+# ============================================================================
+# TEST 19: Regression - Verify previously-working endpoints still work
+# ============================================================================
+print("\n[TEST 19] Regression - Previously-working endpoints")
+try:
+    # Quick sanity check: POST /api/research/seed
+    response1 = requests.post(f"{API_URL}/research/seed", timeout=10)
+    if response1.status_code == 200:
+        log_test("Regression: POST /api/research/seed still works", True)
+    else:
+        log_test("Regression: POST /api/research/seed still works", False, f"Status: {response1.status_code}")
+    
+    # Quick sanity check: GET /api/research
+    response2 = requests.get(f"{API_URL}/research", timeout=10)
+    if response2.status_code == 200:
+        data2 = response2.json()
+        if 'items' in data2 and 'total' in data2:
+            log_test("Regression: GET /api/research still works", True)
+        else:
+            log_test("Regression: GET /api/research still works", False, "Missing keys")
+    else:
+        log_test("Regression: GET /api/research still works", False, f"Status: {response2.status_code}")
+    
+    # Quick sanity check: POST /api/newsletter
+    response3 = requests.post(f"{API_URL}/newsletter", json={"email": "regression.test@example.com"}, timeout=10)
+    if response3.status_code == 200:
+        log_test("Regression: POST /api/newsletter still works", True)
+    else:
+        log_test("Regression: POST /api/newsletter still works", False, f"Status: {response3.status_code}")
+        
+except Exception as e:
+    log_test("Regression tests", False, f"Error: {str(e)}")
+
+# ============================================================================
 # SUMMARY
 # ============================================================================
 print("\n" + "=" * 80)

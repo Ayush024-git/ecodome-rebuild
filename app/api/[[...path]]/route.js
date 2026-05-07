@@ -396,6 +396,36 @@ async function handleRoute(request, { params }) {
       return handleCORS(NextResponse.json({ ok: true }))
     }
 
+    // ---------- FUTURE PROJECTS NOTIFY ----------
+    if (route === '/projects/notify' && method === 'POST') {
+      const body = await request.json()
+      if (!body.email || !body.projectId) {
+        return handleCORS(NextResponse.json({ error: 'email & projectId required' }, { status: 400 }))
+      }
+      await db.collection('project_notifications').updateOne(
+        { email: body.email.toLowerCase(), projectId: body.projectId },
+        {
+          $set: {
+            email: body.email.toLowerCase(),
+            projectId: body.projectId,
+            projectTitle: body.projectTitle || '',
+            updatedAt: new Date(),
+          },
+          $setOnInsert: { id: uuidv4(), createdAt: new Date() },
+        },
+        { upsert: true }
+      )
+      return handleCORS(NextResponse.json({ ok: true }))
+    }
+    if (route === '/projects/notify' && method === 'GET') {
+      const items = await db.collection('project_notifications').find({}).limit(500).toArray()
+      const byProject = {}
+      for (const it of items) {
+        byProject[it.projectId] = (byProject[it.projectId] || 0) + 1
+      }
+      return handleCORS(NextResponse.json({ counts: byProject, total: items.length }))
+    }
+
     return handleCORS(NextResponse.json({ error: `Route ${route} not found` }, { status: 404 }))
   } catch (error) {
     console.error('API Error:', error)

@@ -12,6 +12,7 @@ import { toast } from 'sonner'
 import Navbar from '@/components/ecodome/Navbar'
 import Footer from '@/components/ecodome/Footer'
 import { Reveal, StaggerGroup, StaggerItem } from '@/components/ecodome/Reveal'
+import FutureProjects from '@/components/ecodome/FutureProjects'
 
 const HERO_IMG = 'https://images.unsplash.com/photo-1771985239333-cbf2ab43f566?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxtYW5ncm92ZSUyMGFlcmlhbHxlbnwwfHx8fDE3NzgxNTY4NjF8MA&ixlib=rb-4.1.0&q=85'
 const MANGROVE_AERIAL = 'https://images.unsplash.com/photo-1651011097573-d7783bab82b8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwyfHxtYW5ncm92ZSUyMGFlcmlhbHxlbnwwfHx8fDE3NzgxNTY4NjF8MA&ixlib=rb-4.1.0&q=85'
@@ -543,7 +544,7 @@ function App() {
       <WhatIsEcodome />
       <FeaturedResearch papers={papers} />
       <ImpactStrip />
-      <Campaigns />
+      <FutureProjects />
       <CommunityVoices />
       <Partners />
       <CTASection />

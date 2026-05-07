@@ -55,7 +55,7 @@ export default function Footer() {
               <ul className="space-y-3 text-sm text-white/80">
                 <li><Link href="/research" className="hover:text-white">Research Hub</Link></li>
                 <li><Link href="/#campaigns" className="hover:text-white">Campaigns</Link></li>
-                <li><Link href="/#impact" className="hover:text-white">Impact Map</Link></li>
+                <li><Link href="/impact" className="hover:text-white">Impact Map</Link></li>
                 <li><Link href="/#community" className="hover:text-white">Community</Link></li>
               </ul>
             </div>
