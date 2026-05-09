@@ -402,11 +402,6 @@ function Campaigns() {
 }
 
 function CommunityVoices() {
-  const voices = [
-    { q: 'ECODOME let me publish my coral-mangrove connectivity study at 19 — with peer review from researchers I never thought I’d meet.', n: 'Aanya Kapoor', r: 'Marine Biology Student · Mumbai', img: DIVER },
-    { q: 'We’ve mapped 14 km of new shark nursery habitat with this community. The data we’re collecting wouldn’t have been possible alone.', n: 'Nalu Tehei', r: 'Field Researcher · Tahiti', img: SHARK_3 },
-    { q: 'A platform that treats young people as scientists, not interns. That’s rare. That’s ECODOME.', n: 'Dr. Ifeoma Okeke', r: 'Climate Lead · University of Lagos', img: MANGROVE_ROOTS_2 },
-  ]
   return (
     <section id="community" className="relative bg-[#0B3D2E] text-white py-28 sm:py-36 overflow-hidden grain">
       <div className="absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-[#0E7490]/25 blur-3xl" />
@@ -428,26 +423,6 @@ function CommunityVoices() {
               Apply to be an Ambassador <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
-        </div>
-
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-5">
-          {voices.map((v, i) => (
-            <Reveal key={i} delay={i * 0.08}>
-              <div className="h-full rounded-3xl border border-white/10 bg-white/[0.04] p-7 hover:bg-white/[0.07] transition-all">
-                <Quote className="h-6 w-6 text-[#9DE6CB]" />
-                <p className="mt-5 text-[15px] leading-relaxed text-white/85">“{v.q}”</p>
-                <div className="mt-7 flex items-center gap-3">
-                  <div className="relative h-11 w-11 overflow-hidden rounded-full ring-1 ring-white/15">
-                    <Image src={v.img} alt={v.n} fill sizes="44px" className="object-cover" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold">{v.n}</div>
-                    <div className="text-[11px] text-white/55">{v.r}</div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
         </div>
       </div>
     </section>
