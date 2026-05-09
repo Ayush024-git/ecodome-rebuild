@@ -135,7 +135,7 @@ export default function FutureProjects() {
   const [active, setActive] = useState(null)
 
   return (
-    <section id="campaigns" className="relative bg-[#FAFAF7] py-28 sm:py-36 overflow-hidden">
+    <section id="campaigns" className="relative bg-[#FAFAF7] py-20 sm:py-28 lg:py-36 overflow-hidden">
       {/* subtle futuristic grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.045]"
@@ -237,30 +237,30 @@ function FeaturedFutureCard({ project, onNotify }) {
         className="absolute -bottom-32 -left-10 h-[320px] w-[320px] rounded-full bg-[#0E7490]/40 blur-3xl"
       />
 
-      <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 sm:p-12">
-        <div className="lg:col-span-7">
-          <div className="flex items-center gap-2">
+      <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 p-7 sm:p-10 lg:p-12">
+        <div className="lg:col-span-7 order-2 lg:order-1">
+          <div className="flex items-center gap-2 flex-wrap">
             <ComingSoonBadge eta={project.eta} color={project.color} />
             <span className="inline-flex items-center gap-1 rounded-full bg-white/10 ring-1 ring-white/15 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-white/80">
               <Sparkles className="h-3 w-3" /> Flagship
             </span>
           </div>
-          <h3 className="font-display mt-5 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.02] tracking-tightest text-balance">
+          <h3 className="font-display mt-5 text-[clamp(1.7rem,5.6vw,3.2rem)] font-semibold leading-[1.04] tracking-tightest text-balance">
             {project.title}
           </h3>
-          <p className="mt-4 text-[16px] text-white/80 leading-relaxed max-w-xl">{project.tagline}</p>
-          <p className="mt-3 text-[14px] text-white/60 leading-relaxed max-w-xl">{project.description}</p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <button onClick={onNotify} className="inline-flex items-center gap-2 rounded-full bg-white text-[#0B3D2E] px-5 py-3 text-sm font-semibold hover:bg-white/90 transition">
+          <p className="mt-4 text-[15px] sm:text-[16px] text-white/80 leading-relaxed max-w-xl">{project.tagline}</p>
+          <p className="mt-3 text-[13.5px] sm:text-[14px] text-white/60 leading-relaxed max-w-xl">{project.description}</p>
+          <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
+            <button onClick={onNotify} className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[#0B3D2E] px-5 py-3 text-sm font-semibold hover:bg-white/90 transition">
               Notify Me <Bell className="h-4 w-4" />
             </button>
-            <button className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold hover:bg-white/10">
+            <button className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold hover:bg-white/10">
               Read the Brief <ArrowRight className="h-4 w-4" />
             </button>
           </div>
         </div>
-        <div className="lg:col-span-5">
-          <div className="relative aspect-square max-w-[320px] mx-auto">
+        <div className="lg:col-span-5 order-1 lg:order-2">
+          <div className="relative aspect-square w-[180px] sm:w-[240px] lg:w-auto lg:max-w-[320px] mx-auto">
             {/* Concentric pulse rings */}
             {[1, 2, 3].map((r) => (
               <motion.span

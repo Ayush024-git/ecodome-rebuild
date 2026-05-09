@@ -74,7 +74,7 @@ function HeroImpact() {
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display mt-6 max-w-5xl text-balance text-white text-[clamp(2.4rem,6.4vw,5.4rem)] font-semibold leading-[0.98] tracking-tightest"
+          className="font-display mt-6 max-w-5xl text-balance text-white text-[clamp(2rem,7.4vw,5.4rem)] font-semibold leading-[1.04] sm:leading-[0.98] tracking-tightest"
         >
           Every coastline tells a story.<br />
           <span className="text-[#9DE6CB]">We listen, measure, restore.</span>
@@ -87,12 +87,12 @@ function HeroImpact() {
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.75 }}
-          className="mt-10 flex flex-wrap items-center gap-3"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3"
         >
-          <a href="#atlas" className="group inline-flex items-center gap-2 rounded-full bg-[#FAFAF7] text-[#0B3D2E] px-6 py-3.5 text-sm font-semibold hover:bg-white shadow-lg shadow-black/30">
+          <a href="#atlas" className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#FAFAF7] text-[#0B3D2E] px-6 py-3.5 text-sm font-semibold hover:bg-white shadow-lg shadow-black/30">
             Open the Atlas <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
-          <a href="#story" className="inline-flex items-center gap-2 rounded-full border border-white/30 text-white px-6 py-3.5 text-sm font-semibold hover:bg-white/10">
+          <a href="#story" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 text-white px-6 py-3.5 text-sm font-semibold hover:bg-white/10">
             See Restoration Story
           </a>
         </motion.div>
@@ -128,7 +128,7 @@ function KPIBand() {
 
 function AtlasSection() {
   return (
-    <section id="atlas" className="relative bg-[#FAFAF7] py-28 sm:py-36">
+    <section id="atlas" className="relative bg-[#FAFAF7] py-20 sm:py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <div className="max-w-3xl">
@@ -221,7 +221,7 @@ function AtlasSection() {
 
 function BiodiversitySection() {
   return (
-    <section className="relative bg-gradient-tide py-28 sm:py-36">
+    <section className="relative bg-gradient-tide py-20 sm:py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-7">
@@ -266,7 +266,7 @@ function BiodiversitySection() {
 
 function StorySection() {
   return (
-    <section id="story" className="relative bg-[#FAFAF7] py-28 sm:py-36">
+    <section id="story" className="relative bg-[#FAFAF7] py-20 sm:py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal><span className="text-[11px] uppercase tracking-[0.3em] text-[#0E7490] font-medium">Restoration in Motion</span></Reveal>
         <Reveal delay={0.05}>
@@ -340,7 +340,7 @@ function ScrollStory() {
     },
   ]
   return (
-    <section className="relative bg-[#0B3D2E] text-white py-28 sm:py-36 overflow-hidden grain">
+    <section className="relative bg-[#0B3D2E] text-white py-20 sm:py-28 lg:py-36 overflow-hidden grain">
       <div className="absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-[#0E7490]/25 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-6">
         <Reveal><span className="text-[11px] uppercase tracking-[0.3em] text-[#9DE6CB] font-medium">Field Notes</span></Reveal>

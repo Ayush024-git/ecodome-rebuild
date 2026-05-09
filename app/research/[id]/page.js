@@ -68,7 +68,7 @@ export default function ResearchPaperPage({ params }) {
       <Navbar variant="light" />
 
       {/* Hero */}
-      <section className="relative pt-36 sm:pt-44 pb-16 bg-[#0B3D2E] text-white overflow-hidden">
+      <section className="relative pt-28 sm:pt-36 lg:pt-44 pb-14 sm:pb-16 bg-[#0B3D2E] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-40">
           <Image src={paper.image} alt="" fill sizes="100vw" className="object-cover" />
         </div>
@@ -84,18 +84,18 @@ export default function ResearchPaperPage({ params }) {
             </div>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="font-display mt-6 text-balance text-[clamp(2rem,4.6vw,3.8rem)] font-semibold leading-[1.04] tracking-tightest">{paper.title}</h1>
+            <h1 className="font-display mt-6 text-balance text-[clamp(1.7rem,5.4vw,3.6rem)] font-semibold leading-[1.06] sm:leading-[1.04] tracking-tightest">{paper.title}</h1>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-6 text-white/75 text-[14px]">By {paper.authors?.join(' · ')}</p>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a href={paper.pdfUrl || '#'} className="inline-flex items-center gap-2 rounded-full bg-white text-[#0B3D2E] px-5 py-3 text-sm font-semibold hover:bg-white/90"><Download className="h-4 w-4" /> Download PDF</a>
-              <button onClick={toggleBookmark} className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold hover:bg-white/10">
+            <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
+              <a href={paper.pdfUrl || '#'} className="inline-flex items-center justify-center gap-2 rounded-full bg-white text-[#0B3D2E] px-5 py-3 text-sm font-semibold hover:bg-white/90"><Download className="h-4 w-4" /> Download PDF</a>
+              <button onClick={toggleBookmark} className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold hover:bg-white/10">
                 {bookmarked ? <><BookmarkCheck className="h-4 w-4" /> Saved</> : <><BookmarkPlus className="h-4 w-4" /> Save</>}
               </button>
-              <button onClick={share} className="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold hover:bg-white/10"><Share2 className="h-4 w-4" /> Share</button>
+              <button onClick={share} className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold hover:bg-white/10"><Share2 className="h-4 w-4" /> Share</button>
             </div>
           </Reveal>
         </div>

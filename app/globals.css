@@ -14,7 +14,8 @@
   --ink: #0B1F18;
 }
 
-html, body { scroll-behavior: smooth; }
+html, body { scroll-behavior: smooth; overflow-x: hidden; }
+html { -webkit-text-size-adjust: 100%; }
 
 .font-display { font-family: var(--font-inter), -apple-system, system-ui, sans-serif; letter-spacing: -0.035em; }
 .tracking-tightest { letter-spacing: -0.045em; }

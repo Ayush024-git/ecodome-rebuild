@@ -50,7 +50,7 @@ function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-          className="font-display mt-6 max-w-5xl text-balance text-white text-[clamp(2.4rem,6.6vw,5.6rem)] font-semibold leading-[0.98] tracking-tightest"
+          className="font-display mt-6 max-w-5xl text-balance text-white text-[clamp(2rem,7.4vw,5.6rem)] font-semibold leading-[1.02] sm:leading-[0.98] tracking-tightest"
         >
           Protecting Mangroves.<br />
           Preserving Shark Nurseries.<br />
@@ -66,12 +66,12 @@ function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.75 }}
-          className="mt-10 flex flex-wrap items-center gap-3"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3"
         >
-          <Link href="/research" className="group inline-flex items-center gap-2 rounded-full bg-[#FAFAF7] text-[#0B3D2E] px-6 py-3.5 text-sm font-semibold hover:bg-white transition-all shadow-lg shadow-black/30">
+          <Link href="/research" className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#FAFAF7] text-[#0B3D2E] px-6 py-3.5 text-sm font-semibold hover:bg-white transition-all shadow-lg shadow-black/30">
             Explore Research <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
-          <Link href="#community" className="group inline-flex items-center gap-2 rounded-full border border-white/30 text-white px-6 py-3.5 text-sm font-semibold hover:bg-white/10 transition-all">
+          <Link href="#community" className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/30 text-white px-6 py-3.5 text-sm font-semibold hover:bg-white/10 transition-all">
             Join the Movement <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </motion.div>
@@ -121,7 +121,7 @@ function ProblemSnapshot() {
     { kpi: '+1.02 GT', title: 'Carbon released annually', body: 'Mangrove deforestation alone emits more CO₂ than several mid-sized economies combined.', icon: Globe2 },
   ]
   return (
-    <section className="relative bg-[#FAFAF7] py-28 sm:py-36">
+    <section className="relative bg-[#FAFAF7] py-20 sm:py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <span className="text-[11px] uppercase tracking-[0.3em] text-[#0E7490] font-medium">The Crisis</span>
@@ -158,7 +158,7 @@ function WhyMangrovesMatter() {
     { icon: Fish, title: 'Shark Nurseries', desc: 'Juvenile sharks shelter in tangled mangrove roots, protected from predators while they grow into apex regulators of the ocean.', img: SHARK, tag: 'Apex Recovery' },
   ]
   return (
-    <section id="mission" className="relative bg-gradient-tide py-28 sm:py-36 overflow-hidden">
+    <section id="mission" className="relative bg-gradient-tide py-20 sm:py-28 lg:py-36 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-px divider-rule" />
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
@@ -215,7 +215,7 @@ function WhatIsEcodome() {
     { icon: Globe2, title: 'Global Collaboration', desc: 'Universities, NGOs, governments, and Indigenous communities on one stack.' },
   ]
   return (
-    <section className="relative bg-[#0B3D2E] text-[#FAFAF7] py-28 sm:py-36 overflow-hidden grain">
+    <section className="relative bg-[#0B3D2E] text-[#FAFAF7] py-20 sm:py-28 lg:py-36 overflow-hidden grain">
       <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-[#0E7490]/30 blur-3xl" />
       <div className="absolute -bottom-40 -left-20 h-[420px] w-[420px] rounded-full bg-[#7CDFC0]/15 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-6">
@@ -264,7 +264,7 @@ function WhatIsEcodome() {
 
 function FeaturedResearch({ papers }) {
   return (
-    <section className="relative bg-[#FAFAF7] py-28 sm:py-36">
+    <section className="relative bg-[#FAFAF7] py-20 sm:py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <div className="max-w-2xl">
@@ -321,7 +321,7 @@ function ImpactStrip() {
     { v: '42', l: 'Countries on the platform', icon: Globe2 },
   ]
   return (
-    <section id="impact" className="relative py-28 sm:py-36 bg-[#FAFAF7] overflow-hidden">
+    <section id="impact" className="relative py-20 sm:py-28 lg:py-36 bg-[#FAFAF7] overflow-hidden">
       <div className="absolute inset-0">
         <Image src={WAVE} alt="" fill sizes="100vw" className="object-cover opacity-[0.18]" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAF7] via-[#FAFAF7]/70 to-[#FAFAF7]" />
@@ -356,7 +356,7 @@ function Campaigns() {
     { tag: 'Coming Soon', img: CORAL_2, title: 'Coral-Mangrove Corridor', desc: 'Mapping connectivity between reef systems and mangrove nurseries via eDNA.', loc: 'Caribbean', progress: 12 },
   ]
   return (
-    <section id="campaigns" className="relative bg-[#FAFAF7] py-28 sm:py-36">
+    <section id="campaigns" className="relative bg-[#FAFAF7] py-20 sm:py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <div className="max-w-2xl">
@@ -403,7 +403,7 @@ function Campaigns() {
 
 function CommunityVoices() {
   return (
-    <section id="community" className="relative bg-[#0B3D2E] text-white py-28 sm:py-36 overflow-hidden grain">
+    <section id="community" className="relative bg-[#0B3D2E] text-white py-20 sm:py-28 lg:py-36 overflow-hidden grain">
       <div className="absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-[#0E7490]/25 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid lg:grid-cols-12 gap-10 items-end">

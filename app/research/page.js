@@ -82,7 +82,7 @@ export default function ResearchHubPage() {
     <main className="relative min-h-screen bg-[#FAFAF7]">
       <Navbar variant="light" />
       {/* Hero */}
-      <section className="relative pt-36 sm:pt-44 pb-16 bg-gradient-to-b from-[#0B3D2E] via-[#0F5238] to-[#0B3D2E] text-white overflow-hidden grain">
+      <section className="relative pt-28 sm:pt-36 lg:pt-44 pb-14 sm:pb-16 bg-gradient-to-b from-[#0B3D2E] via-[#0F5238] to-[#0B3D2E] text-white overflow-hidden grain">
         <div className="absolute inset-0 opacity-20">
           <Image src="https://images.unsplash.com/photo-1717292741426-d050f4f25503?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxtYW5ncm92ZSUyMHJvb3RzJTIwdW5kZXJ3YXRlcnxlbnwwfHx8fDE3NzgxNTY4Njl8MA&ixlib=rb-4.1.0&q=85" alt="" fill sizes="100vw" className="object-cover" />
         </div>
@@ -93,7 +93,7 @@ export default function ResearchHubPage() {
             <span className="mt-6 inline-block text-[11px] uppercase tracking-[0.3em] text-[#9DE6CB] font-medium">Research Hub</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="font-display mt-3 max-w-4xl text-[clamp(2.2rem,5.4vw,4.5rem)] font-semibold leading-[1.02] tracking-tightest text-balance">
+            <h1 className="font-display mt-3 max-w-4xl text-[clamp(2rem,6.4vw,4.5rem)] font-semibold leading-[1.04] sm:leading-[1.02] tracking-tightest text-balance">
               The world’s open library for mangrove, marine, and shark research.
             </h1>
           </Reveal>
@@ -118,7 +118,7 @@ export default function ResearchHubPage() {
                   </button>
                 )}
               </div>
-              <button onClick={() => setFiltersOpen(true)} className="sm:hidden inline-flex items-center justify-center h-12 w-12 rounded-full bg-white text-[#0B3D2E]">
+              <button onClick={() => setFiltersOpen(true)} className="lg:hidden inline-flex items-center justify-center h-12 w-12 rounded-full bg-white text-[#0B3D2E]" aria-label="Open filters">
                 <SlidersHorizontal className="h-4 w-4" />
               </button>
             </div>

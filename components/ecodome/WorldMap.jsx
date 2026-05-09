@@ -34,7 +34,7 @@ export default function WorldMap() {
 
   return (
     <div className="relative">
-      <div className="relative aspect-[16/9] rounded-3xl bg-[#071E16] overflow-hidden ring-1 ring-white/10">
+      <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] rounded-3xl bg-[#071E16] overflow-hidden ring-1 ring-white/10">
         {mounted && (
           <ComposableMap
             projection="geoEqualEarth"
@@ -93,7 +93,7 @@ export default function WorldMap() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute right-4 sm:right-6 top-16 sm:top-20 w-[300px] sm:w-[340px] rounded-2xl bg-white/95 backdrop-blur-md ring-1 ring-[#0B3D2E]/15 p-5 shadow-[0_24px_60px_-30px_rgba(11,61,46,0.55)]"
+            className="absolute z-10 left-4 right-4 bottom-4 sm:left-auto sm:right-6 sm:bottom-auto sm:top-20 sm:w-[340px] rounded-2xl bg-white/95 backdrop-blur-md ring-1 ring-[#0B3D2E]/15 p-5 shadow-[0_24px_60px_-30px_rgba(11,61,46,0.55)]"
           >
             <button onClick={() => setActive(null)} className="absolute top-3 right-3 h-7 w-7 rounded-full hover:bg-[#0B3D2E]/5 flex items-center justify-center">
               <X className="h-4 w-4 text-[#0B3D2E]/70" />
