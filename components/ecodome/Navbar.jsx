@@ -31,8 +31,18 @@ export default function Navbar({ variant = 'auto' }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className={`flex items-center justify-between rounded-full border transition-all duration-500 ${isLight ? 'glass border-[#0B3D2E]/10 shadow-[0_8px_32px_-12px_rgba(11,61,46,0.18)]' : 'glass-dark border-white/10'} px-3 sm:px-5 py-2.5`}>
           <Link href="/" className="flex items-center gap-2.5 group">
-            <span className={`relative flex h-9 w-9 items-center justify-center rounded-full ${isLight ? 'bg-[#0B3D2E]' : 'bg-white/10 ring-1 ring-white/20'}`}>
-              <Waves className={`h-4.5 w-4.5 ${isLight ? 'text-[#FAFAF7]' : 'text-white'}`} strokeWidth={2.2} />
+            <span
+              className={`relative flex h-10 w-10 overflow-hidden items-center justify-center rounded-full ${
+                isLight
+                  ? 'bg-[#0B3D2E]'
+                  : 'bg-white/10 ring-1 ring-white/20'
+              }`}
+            >
+              <img
+                src="/logo.png"
+                alt="ECODOME Logo"
+                className="h-full w-full object-cover"
+              />
             </span>
             <div className="flex flex-col leading-none">
               <span className={`font-display text-[15px] font-bold tracking-tightest ${isLight ? 'text-[#0B3D2E]' : 'text-white'}`}>ECODOME</span>
