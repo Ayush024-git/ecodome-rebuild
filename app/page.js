@@ -419,7 +419,12 @@ function CommunityVoices() {
             <p className="text-white/70 text-[15px] leading-relaxed">
               Researchers, ambassadors, divers, illustrators, policy nerds, and field volunteers — connected across 42 countries with shared protocols and open data.
             </p>
-            <Link href="#contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-[#0B3D2E] px-5 py-3 text-sm font-semibold hover:bg-white/90">
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdKiVyOKWG5q4lACLqGHx46tcsPzcVnMe0HZJG2FwzgrJiX4w/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-white text-[#0B3D2E] px-5 py-3 text-sm font-semibold hover:bg-white/90"
+            >
               Apply to be an Ambassador <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
