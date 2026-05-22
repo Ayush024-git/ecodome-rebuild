@@ -73,7 +73,7 @@ export default function Footer() {
               <ul className="space-y-3 text-sm text-white/80">
                 <li><a href="https://www.instagram.com/youth.ecodome?igsh=MXBxeTZjbjdybGgxOA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-white inline-flex items-center gap-2"><Instagram className="h-4 w-4" /> Instagram</a></li>
                 <li><a href="https://x.com/EcodomeYouth" target="_blank" rel="noopener noreferrer" className="hover:text-white inline-flex items-center gap-2"><Twitter className="h-4 w-4" /> Twitter / X</a></li>
-                <li><a href="#" className="hover:text-white inline-flex items-center gap-2"><Linkedin className="h-4 w-4" /> LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/company/ecodomee/" target="_blank" rel="noopener noreferrer" className="hover:text-white inline-flex items-center gap-2"><Linkedin className="h-4 w-4" /> LinkedIn</a></li>
                 <li><a href="mailto:Youthecodome@gmail.com" className="hover:text-white inline-flex items-center gap-2"><Mail className="h-4 w-4" /> Email</a></li>
               </ul>
             </div>
