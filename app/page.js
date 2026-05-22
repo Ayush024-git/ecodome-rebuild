@@ -109,6 +109,15 @@ function Hero() {
           A youth-led global platform combining conservation research,
           climate awareness, and marine ecosystem protection.
         </motion.p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            href="#partners-network"
+            className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-100 px-6 py-3 text-sm font-semibold hover:bg-cyan-400/20 transition-all"
+          >
+            Our Partners
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>    
       </motion.div>
 
       <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-b from-transparent to-[#FAFAF7]" />
