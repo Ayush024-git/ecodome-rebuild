@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Waves, Instagram, Twitter, Linkedin, Youtube, ArrowRight } from 'lucide-react'
+import { Waves, Instagram, Twitter, Linkedin, Mail, ArrowRight } from 'lucide-react'
 import { toast } from 'sonner'
 
 export default function Footer() {
@@ -71,10 +71,10 @@ export default function Footer() {
             <div>
               <div className="text-xs uppercase tracking-[0.22em] text-white/45 mb-4">Connect</div>
               <ul className="space-y-3 text-sm text-white/80">
-                <li><a href="#" className="hover:text-white inline-flex items-center gap-2"><Instagram className="h-4 w-4" /> Instagram</a></li>
-                <li><a href="#" className="hover:text-white inline-flex items-center gap-2"><Twitter className="h-4 w-4" /> Twitter / X</a></li>
+                <li><a href="https://www.instagram.com/youth.ecodome?igsh=MXBxeTZjbjdybGgxOA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="hover:text-white inline-flex items-center gap-2"><Instagram className="h-4 w-4" /> Instagram</a></li>
+                <li><a href="https://x.com/EcodomeYouth" target="_blank" rel="noopener noreferrer" className="hover:text-white inline-flex items-center gap-2"><Twitter className="h-4 w-4" /> Twitter / X</a></li>
                 <li><a href="#" className="hover:text-white inline-flex items-center gap-2"><Linkedin className="h-4 w-4" /> LinkedIn</a></li>
-                <li><a href="#" className="hover:text-white inline-flex items-center gap-2"><Youtube className="h-4 w-4" /> YouTube</a></li>
+                <li><a href="mailto:Youthecodome@gmail.com" className="hover:text-white inline-flex items-center gap-2"><Mail className="h-4 w-4" /> Email</a></li>
               </ul>
             </div>
           </div>
@@ -92,3 +92,4 @@ export default function Footer() {
     </footer>
   )
 }
+
