@@ -6,6 +6,7 @@ import { ArrowLeft, BookmarkPlus, BookmarkCheck, Calendar, MapPin, Quote, Tag, D
 import Navbar from '@/components/ecodome/Navbar'
 import Footer from '@/components/ecodome/Footer'
 import { Reveal } from '@/components/ecodome/Reveal'
+import { getOrCreateResearchUserKey } from '@/lib/research-user-key'
 import { toast } from 'sonner'
 
 export default function ResearchPaperPage({ params }) {
@@ -16,9 +17,7 @@ export default function ResearchPaperPage({ params }) {
   const [userKey, setUserKey] = useState('')
 
   useEffect(() => {
-    let v = localStorage.getItem('ecodome:userKey')
-    if (!v) { v = 'u_' + Math.random().toString(36).slice(2, 10); localStorage.setItem('ecodome:userKey', v) }
-    setUserKey(v)
+    setUserKey(getOrCreateResearchUserKey())
   }, [])
 
   useEffect(() => {

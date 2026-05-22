@@ -8,15 +8,14 @@ import { toast } from 'sonner'
 import Navbar from '@/components/ecodome/Navbar'
 import Footer from '@/components/ecodome/Footer'
 import { Reveal } from '@/components/ecodome/Reveal'
+import { getOrCreateResearchUserKey } from '@/lib/research-user-key'
 
 const CATEGORIES = ['Mangrove Conservation','Marine Biodiversity','Shark Ecology','Climate Impact']
 
 function useUserKey() {
   const [k, setK] = useState('')
   useEffect(() => {
-    let v = typeof window !== 'undefined' ? localStorage.getItem('ecodome:userKey') : ''
-    if (!v) { v = 'u_' + Math.random().toString(36).slice(2, 10); localStorage.setItem('ecodome:userKey', v) }
-    setK(v)
+    setK(getOrCreateResearchUserKey())
   }, [])
   return k
 }
