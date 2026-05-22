@@ -396,24 +396,6 @@ function ImpactStrip() {
   )
 }
 
-function App() {
-  return (
-    <main className="relative">
-      <Navbar />
-
-      <Hero />
-
-      <StatBar />
-
-      <WhyMangrovesMatter />
-
-      <ResearchArchive />
-
-      <ImpactStrip />
-
-      <FutureProjects />
-
-    
 function PartnersShowcase() {
   const partnerList = [
     'VEXMUN',
@@ -478,6 +460,23 @@ function PartnersShowcase() {
     </section>
   )
 }
+
+function App() {
+  return (
+    <main className="relative">
+      <Navbar />
+
+      <Hero />
+
+      <StatBar />
+
+      <WhyMangrovesMatter />
+
+      <ResearchArchive />
+
+      <ImpactStrip />
+
+      <FutureProjects />
 
       <Footer />
     </main>
