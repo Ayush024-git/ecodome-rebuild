@@ -244,7 +244,7 @@ function ResearchArchive() {
     {
       title: 'Why Sharks Are Essential to Mangrove Forest Ecosystems',
       category: 'Marine Ecology',
-      file: '/docs/guardians-of-the-tidal-forest.pdf',
+      file: '/docs/sharks-importance.pdf',
     },
     {
       title: 'The Role of Mangrove Forests in Ecology and Economy',
