@@ -413,6 +413,72 @@ function App() {
 
       <FutureProjects />
 
+    
+function PartnersShowcase() {
+  const partnerList = [
+    'VEXMUN',
+    'VRMUN III',
+    'IDYMUN',
+    'SWAYAM INITITIVE',
+    'SAMUN',
+    'ISYC',
+  ]
+
+  return (
+    <section
+      id="partners-network"
+      className="relative overflow-hidden bg-[#071E16] py-24 sm:py-32"
+    >
+      <div className="absolute inset-0">
+        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6">
+        <Reveal>
+          <div className="text-center">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-[#9DE6CB] font-medium">
+              Strategic Network
+            </span>
+
+            <h2 className="font-display mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.02] tracking-tightest text-white">
+              Our Partners
+            </h2>
+
+            <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-white/65">
+              Collaborating with youth-led organizations, international
+              conferences, and global initiatives driving innovation,
+              diplomacy, leadership, and environmental impact.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {partnerList.map((partner, i) => (
+            <Reveal key={i} delay={i * 0.05}>
+              <div className="group rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-md hover:bg-white/[0.07] hover:border-white/20 transition-all hover:-translate-y-1">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-display text-2xl font-semibold tracking-tightest text-white">
+                    {partner}
+                  </h3>
+
+                  <div className="h-2 w-2 rounded-full bg-[#7CDFC0] group-hover:scale-125 transition-transform" />
+                </div>
+
+                <div className="mt-6 h-px w-full bg-gradient-to-r from-[#7CDFC0]/40 to-transparent" />
+
+                <p className="mt-5 text-sm leading-relaxed text-white/55">
+                  Official collaboration partner within the ECODOME global
+                  youth and sustainability ecosystem.
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
       <Footer />
     </main>
   )
