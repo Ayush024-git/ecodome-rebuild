@@ -486,6 +486,8 @@ function App() {
       <ImpactStrip />
 
       <FutureProjects />
+    
+      <PartnersShowcase />
 
       <Footer />
     </main>
