@@ -276,6 +276,17 @@ function ResearchArchive() {
       category: 'Environmental Innovation',
       file: '/docs/ecodome-mangroves-x-sharks.pdf',
     },
+    {
+      title: 'Designed Escape Gaps in Artificial Reefs to Prevent Animals Entrapment',
+      category: 'Marine Engineering',
+      file: '/docs/designed-escape-gaps-in-artificial-reefs-to-prevent-animals-entrapment.pdf',
+    },
+    {
+      title:
+        'Hydroacoustic Navigation in Mangrove Estuaries: Assessing Juvenile Shark Reliance on Root Vibratory Signatures',
+      category: 'Shark Ecology',
+      file: '/docs/hydroacoustic-navigation-in-mangrove-estuaries-assessing-juvenile-shark-reliance-on-root-vibratory-signatures.pdf',
+    },
   ]
 
   return (
