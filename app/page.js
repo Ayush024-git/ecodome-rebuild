@@ -287,8 +287,6 @@ function ResearchArchive() {
       category: 'Shark Ecology',
       file: '/docs/hydroacoustic-navigation-in-mangrove-estuaries-assessing-juvenile-shark-reliance-on-root-vibratory-signatures.pdf',
     },
-<<<<<<< HEAD
-=======
     {
       title:
         'Assessing the Environmental Safety of Recycled HDPE in Marine Conservation Applications',
@@ -315,7 +313,6 @@ function ResearchArchive() {
         'An EcoDome research framework evaluating modular HDPE structures for mangrove restoration, sediment stabilization, and improved blue carbon sequestration.',
       file: '/docs/blue-carbon-ecodome-framework.pdf',
     },
->>>>>>> 55c7cce (update research archive)
   ]
 
   return (
